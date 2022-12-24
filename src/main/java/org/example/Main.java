@@ -2,6 +2,10 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        DB db = new DB();
+        Authorization authorization = new Authorization();
+        if (authorization.authorize(db)) {
+            ReportBuilder br = new ReportBuilder(db);
+        }
     }
 }
